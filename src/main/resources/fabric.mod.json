@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "death-marker",
+  "version": "${version}",
+
+  "name": "Death Marker",
+  "description": "Marks your death coordinates in chat when you die",
+  "authors": [
+    "Kenneth Chew"
+  ],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/deathmarker/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.kthchew.deathmarker.DeathMarker"
+    ]
+  },
+  "mixins": [
+    "deathmarker.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.11",
+    "fabric": "*",
+    "minecraft": "1.18.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
