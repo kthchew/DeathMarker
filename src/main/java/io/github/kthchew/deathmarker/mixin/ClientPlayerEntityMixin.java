@@ -8,6 +8,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Final;
@@ -47,10 +48,10 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
 			Text deathMessage;
 			if (this.getY() >= this.getEntityWorld().getBottomY()) {
-				deathMessage = new LiteralText("§c[DEATH] §rDied at " + decimalFormat.format(this.getX()) + ", " + decimalFormat.format(this.getY()) + ", " + decimalFormat.format(this.getZ()) + " in " + dimension);
+				deathMessage = new LiteralText(Formatting.RED + "[DEATH] " + Formatting.RESET + "Died at " + decimalFormat.format(this.getX()) + ", " + decimalFormat.format(this.getY()) + ", " + decimalFormat.format(this.getZ()) + " in " + dimension);
 			} else {
 				// Obfuscate coordinates if the player died in the void
-				deathMessage = new LiteralText("§c[DEATH] §rDied at §k" + decimalFormat.format(this.getX()) + ", " + decimalFormat.format(this.getY()) + ", " + decimalFormat.format(this.getZ()) + "§r in " + dimension);
+				deathMessage = new LiteralText(Formatting.RED + "[DEATH] " + Formatting.RESET + "Died at " + Formatting.OBFUSCATED + decimalFormat.format(this.getX()) + ", " + decimalFormat.format(this.getY()) + ", " + decimalFormat.format(this.getZ()) + Formatting.RESET + " in " + dimension);
 			}
 			this.sendMessage(deathMessage, false);
 		}
