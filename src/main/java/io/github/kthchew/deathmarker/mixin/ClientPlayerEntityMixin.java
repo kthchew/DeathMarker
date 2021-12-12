@@ -9,9 +9,6 @@ import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.World;
 import net.minecraft.world.dimension.DimensionType;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -21,6 +18,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 @Mixin(ClientPlayerEntity.class)
+@SuppressWarnings("unused")
 public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity implements ClientPlayerEntityExtension {
 
 	public ClientPlayerEntityMixin(ClientWorld world, GameProfile profile) {
