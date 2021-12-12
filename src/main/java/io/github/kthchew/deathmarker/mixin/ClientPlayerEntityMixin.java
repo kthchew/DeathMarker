@@ -48,7 +48,7 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 			}
 
 			Text deathMessage;
-			if (this.getY() >= 0) {
+			if (this.getY() >= this.getEntityWorld().getBottomY()) {
 				deathMessage = new LiteralText("§c[DEATH] §rDied at " + decimalFormat.format(this.getX()) + ", " + decimalFormat.format(this.getY()) + ", " + decimalFormat.format(this.getZ()) + " in " + dimension);
 			} else {
 				// Obfuscate coordinates if the player died in the void
